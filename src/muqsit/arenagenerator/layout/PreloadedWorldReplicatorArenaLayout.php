@@ -71,7 +71,7 @@ final class PreloadedWorldReplicatorArenaLayout implements ArenaLayout{
 		for($chunk_x = $min_x; $chunk_x <= $max_x; ++$chunk_x){
 			for($chunk_z = $min_z; $chunk_z <= $max_z; ++$chunk_z){
 				if(isset($this->chunks[$hash = World::chunkHash($chunk_x, $chunk_z)])){
-					$this->chunks[$hash]->copyAt($offset_min_x + $chunk_x, $offset_min_z + $chunk_z, $world);
+					$this->chunks[$hash]->copyTo($offset_min_x + $chunk_x, $offset_min_z + $chunk_z, $world);
 				}
 			}
 		}

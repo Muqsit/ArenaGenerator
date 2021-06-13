@@ -60,7 +60,7 @@ final class PreloadedChunk{
 		$this->light_populated = $light_populated;
 	}
 
-	public function copyAt(int $chunk_x, int $chunk_z, World $world) : Chunk{
+	public function copyTo(int $chunk_x, int $chunk_z, World $world) : Chunk{
 		$chunk = new Chunk(
 			array_map(static function(SubChunk $sub_chunk) : SubChunk{ return clone $sub_chunk; }, $this->sub_chunks),
 			[],

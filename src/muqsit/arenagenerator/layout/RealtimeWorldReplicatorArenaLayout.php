@@ -52,7 +52,7 @@ final class RealtimeWorldReplicatorArenaLayout implements ArenaLayout{
 				$z = $offset_src_min_z + $chunk_z;
 				$chunk = $this->source->loadChunk($x, $z);
 				if($chunk !== null){
-					PreloadedChunk::fromChunk($chunk)->copyAt($offset_dst_min_x + $chunk_x, $offset_dst_min_z + $chunk_z, $world);
+					PreloadedChunk::fromChunk($chunk)->copyTo($offset_dst_min_x + $chunk_x, $offset_dst_min_z + $chunk_z, $world);
 				}
 			}
 		}

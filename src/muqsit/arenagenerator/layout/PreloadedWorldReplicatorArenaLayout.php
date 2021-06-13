@@ -10,10 +10,20 @@ use pocketmine\world\World;
 
 /**
  * ArenaLayout implementation that stores chunks in-memory to reduce overhead
- * of loading chunks from disk and reading them everytime the layout is re-used.
+ * of reading chunks from world everytime the layout is re-used. As this layout
+ * stores chunks in memory, it is more memory intensive than
+ * RealtimeWorldReplicatorArenaLayout. However, the runtime cost is a lot lesser
+ * as the process of reading chunks from disk and decoding them is eliminated.
  */
 final class PreloadedWorldReplicatorArenaLayout implements ArenaLayout{
 
+	/**
+	 * Reads chunks from a given world once and stores them for reuse.
+	 *
+	 * @param World $world
+	 * @param ArenaBoundingBox $absolute_bounding_box
+	 * @return self
+	 */
 	public static function fromWorld(World $world, ArenaBoundingBox $absolute_bounding_box) : self{
 		$chunks = [];
 

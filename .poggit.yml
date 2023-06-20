@@ -1,0 +1,10 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/NopeNotDark/ArenaGenerator
+build-by-default: true
+branches:
+- master
+projects:
+  ArenaGenerator:
+    path: ""
+    model: virion
+    type: library
+...
